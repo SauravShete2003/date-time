@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date && Time </title>
+</head>
+<style>
+    body{
+        background-color : #fff;
+        text-align: center;
+        padding-top: 50px;
+        font-size: 48px;
+    }
+</style>
+<body>
+    <div id="clock">
+
+
+
+    </div>
+    <div id="Date">
+
+    </div>
+    <script>
+     function updateClock() {
+        const date = new Date();
+        const timeString = date.toLocaleTimeString(); 
+        document.getElementById("clock").innerText = timeString;
+
+       
+
+     }
+    //  function updateDate() {
+    //  const date = new Date();
+    //  const timeString = date.toLocaleDateString(); 
+    //  document.getElementById("Date").innerText = timeString;
+    //  }
+
+      setInterval(updateClock,1000);
+
+     updateClock();
+
+     
+
+    // updateDate();
+
+
+
+
+
+
+
+        // const date = new Date();
+        // console.log (date);
+        // const currentHours = date.getHours();
+        // const currentMinutes = date.getMinutes();
+        // const currentSeconds = date.getSeconds();
+        // console.log (`current time is:${currentHours}:${currentMinutes}:${currentSeconds}`);
+    </script>
+</body>
+</html>
