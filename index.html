@@ -3,18 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date && Time </title>
+    <title>Date & Time</title>
+    <style>
+        body {
+            background-color: #fff;
+            text-align: center;
+            padding-top: 50px;
+            font-size: 24px;
+        }
+    </style>
 </head>
-<style>
-    body{
-        background-color : #fff;
-        text-align: center;
-        padding-top: 50px;
-        font-size: 48px;
-    }
-</style>
 <body>
-    <div id="clock">
+    <label>Enter Your Birthdate</label>
+    <input type="date" id="Birthdate">
+    <button onclick="calculateAge()">Calculate Age</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateAge() {
+            const BirthdateInput = document.getElementById("Birthdate").value;
+            const Birthdate = new Date(BirthdateInput);
+            const now = new Date();
+     
+            let age = now.getFullYear() - Birthdate.getFullYear();
+            const monthDiff = now.getMonth() - Birthdate.getMonth();
+    
+            if (monthDiff < 0 || (monthDiff === 0 && now.getDate() < Birthdate.getDate())) {
+                age--;
+            }
+
+            
+            document.getElementById("result").innerText = `Your age is: ${age} years old`;
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div id="clock">
 
 
 
@@ -37,19 +75,13 @@
     //  document.getElementById("Date").innerText = timeString;
     //  }
 
-      setInterval(updateClock,1000);
+    //   setInterval(updateClock,1000);
 
-     updateClock();
+    //  updateClock();
 
      
 
-    // updateDate();
-
-
-
-
-
-
+    // updateDate()
 
         // const date = new Date();
         // console.log (date);
@@ -57,6 +89,6 @@
         // const currentMinutes = date.getMinutes();
         // const currentSeconds = date.getSeconds();
         // console.log (`current time is:${currentHours}:${currentMinutes}:${currentSeconds}`);
-    </script>
+    </script> -->
 </body>
 </html>
